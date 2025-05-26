@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 
 const Todos = (props) => {
   return (
-    <div className='container text-center mx-auto '>
+    <div className='container my-3'>
       <h3 className="mx-5 text-xl font-bold mb-4">Todos List</h3>
       
       {props.todos.length === 0 ? "No Todos to Display" : props.todos.map((todo) => {
@@ -15,3 +15,4 @@ const Todos = (props) => {
 }
 
 export default Todos
+ 

@@ -1,4 +1,3 @@
-
 import './App.css';
 import Header from "./MyComponents/Header.jsx";
 import Todos from "./MyComponents/Todos.jsx";
@@ -17,6 +16,16 @@ function App() {
     }))
   };
   
+  const addTodo = (title, desc) => {
+    console.log("I am adding this todo", title, desc);
+    const myTodo = {
+      sno: todos.length + 1,
+      title: title,
+      desc: desc,
+    }
+    console.log(myTodo);
+    setTodos([...todos, myTodo]);
+  }
 
   const [todos, setTodos] = useState([
     {
@@ -39,7 +48,7 @@ function App() {
   return (
     <>
     <Header title="MyTodos"/>
-    <AddTodo/>
+    <AddTodo addTodo={addTodo}/>
     <Todos todos={todos} onDelete={onDelete}/>
     <Footer/>
     </>
